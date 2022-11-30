@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <style>
+        #scrollright {
+           /* background-image:url(Rightbutton.png);*/
+            background-size: cover;
+            width: 60px;
+            height: 60px;
+        }
+        #scrollleft {
+            /*background-image:url(button.png);*/
+            background-size: cover;
+            width: 60px;
+            height: 60px;
+        }
+        #scrollfarleft {
+            /*background-image:url(farleftbutton.png);*/
+            background-size: cover;
+            width: 60px;
+            height: 60px;
+
+        }
+        #scrollfarright {
+            /*background-image:url(farrightbutton.png);*/
+            background-size: cover;
+            width: 60px;
+            height: 60px;
+        }
+        #infodisplay {
+            background-image:url();
+            background-size:cover;
+            width: auto;
+            height: 60px;
+            margin: auto;
+
+
+        }
+        #bodyheader {
+            margin:auto;
+            width: auto;
+            text-align: center;
+            
+        }
+    </style>
+    <link rel="shortcut icon" href="#">
+    <script src = "loadPokemon.js"> </script>
+</head>
+
+<body>
+    <header id = "bodyheader">
+        <img src="imgs/POKEMON.png">
+
+    </header>
+    <div id="loadImage-wrap">
+        <p>Pokemon Image</p>
+        <img src = "">
+        <img id="loadImage" />
+    <div>
+    <section id = "mainContent">
+                <div id  = "pokemoninfo">
+                    <div id = "editbutton">
+                        <button id="edit" class="float-right" onclick="toggleEdit()">
+                        Edit <img src="imgs/edit.png" alt="edit icon" width="15px" />
+                        </button>
+                    </div>
+                    <h4 id = "pagenum"> </h4>
+                    <input id="get" type="button" value="Get" onclick="getItem()" />
+                    <input type="number" id="getItem" class="input_sm" value="" />
+                    <form id = "pokemonform">
+                        
+                
+                        <label for = "pname">Pokemon Name</label>
+                        <input type = "text" id = "pname" name ="pname" value="" class = "inputs" >
+                
+                               
+                        <label for = "ptype">Type</label>
+                        <input type = "text" id = "ptype" name = "ptype"  class = "inputs" >
+                                         
+                                
+                        <label for = "num"> Pokedex Number</label>
+                        <input id = "num" name = "num" type = "number" class = "inputs" >
+                                     
+                                
+                        <label for = "generation">Generation Number</label>
+                        <input id = "generation" name = "generation" type = "number" class = "inputs" >
+                                    
+                              
+                        <label for = "">Caught?</label>
+                        <input type = "text" id = "pcaught" name = "pcaught"  class = "inputs" >
+                          
+                    </form>
+                    <div id = "uploadbutton">
+                        <button id="upload" class="float-right" onclick="uploadItem()">
+                        Upload Image<img src="imgs/upload.png" alt="upload icon" width="15px" />
+                        </button>
+
+                    <input id="sortbyNameButton" type="button" value="Title" onclick="sortMovies(this.value)"/>
+                    <input id="sortbyIndexButton" type="button" value="Index" onclick="sortMovies(this.value)"/>
+                     <div class = "buttonDiv">
+                    
+                        <a class ="buttonA" onclick = "prev()"> Prev <img class = "buttons" src = "imgs/Leftbutton.png" id = "scrollleft" ></a>
+                        </div>
+                     
+            
+                     <div class = "buttonDiv">
+
+                        <a class ="buttonA" onclick = "next()"> Next <img class = "buttons" src = "imgs/Rightbutton.png" id = "scrollright"></a>
+                    </div>
+                </div>
+
+                <div id = "skipButtons">
+                    <a class = "skipButtonA" onclick = "skipBack()" > First <img class = "buttons" src = "imgs/farleftbutton.png" id = "scrollfarleft"></a>
+                    
+                    <a class = "skipButtonA"  onclick = "skipForward()"> Last <img class = "buttons" src = "imgs/farrightbutton.png" id = "scrollfarright"></a>
+
+                </div>
+                <div>
+
+                    <input id="add" type="submit" value="Add" class="float-right" formaction="php/addPokemon.php"/>
+                    <input id="delete" type="submit" value="Delete" class="float-right" formaction="php/deletePokemon.php"/>
+                </div>
+                
+
+
+    <footer>
+        Matthew Do <br>
+        10/20/2022 <br>
+        zombiefood@mail.fresnostate.edu <br>
+        
+    <a href="https://github.com/mattdo40?tab=repositories">Github Link</a>
+
+    </footer>
+
+
+
+</body>
+
+</html> 
