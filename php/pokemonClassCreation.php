@@ -13,16 +13,16 @@ function generateRandomString($pokedexnum = 10) {
 
 class Pokemon implements JsonSerializable{
     // the pokemon id is set to the pkey from mysql
-    public $pokemonid;
+    public $pokemonId;
     public $pname;
     public $ptype;
     public $pokedexnum;
-    public $pcaugmovies_tblht;
+    public $pcaught;
     public $generation;
     public $imgLink;
 
     public function __construct() {
-        $this->pokemonid = strval(10);
+        $this->pokemonId = strval(10);
         $this->pname = generateRandomString();
         $this->ptype = generateRandomString();
         $this->pokedexnum = strval(rand(1,1500));
@@ -34,7 +34,7 @@ class Pokemon implements JsonSerializable{
     // obj to str
     public function jsonSerialize() {
         return [
-            'pokemonid' => $this->pokemonid,
+            'pokemonId' => $this->pokemonId,
             'pname' => $this->pname,
             'ptype' => $this->ptype,
             'pokedexnum' => $this->pokedexnum,
@@ -46,7 +46,7 @@ class Pokemon implements JsonSerializable{
     
     // std obj -> movie Object
     public function Set($json) {
-        $this->pokemonid=$json['pokemonid'];
+        $this->pokemonId=$json['pokemonId'];
         $this->pname=$json['pname'];
         $this->ptype=$json['ptype'];
         $this->pokedexnum=$json['pokedexnum'];

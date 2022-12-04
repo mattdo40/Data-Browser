@@ -1,10 +1,10 @@
 <?php
-$target_dir = "/imgs"; // you must create this directory in the folder where you have the PHP file
-$target_file = $target_dir . basename($_FILES["img_path"]["name"]);
+$target_dir = "../imgs/"; // you must create this directory in the folder where you have the PHP file
+$target_file = $target_dir . basename($_FILES["imgLink"]["name"]);
 
 echo "<p>Upload information</p><ul>";
 echo  "<li>Target folder for the upload :". $target_file . "</li>";
-echo  "<li>File name :". basename($_FILES["img_path"]["name"]) . "</li>";
+echo  "<li>File name :". basename($_FILES["imgLink"]["name"]) . "</li>";
 // basename: Returns the base name of the given path
 
 $uploadOk = 1;
@@ -13,7 +13,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Verify if the image file is an actual image or a fake image
 if(isset($_POST["submit"])) {
   
-    $check = getimagesize($_FILES["img_path"]["tmp_name"]);
+    $check = getimagesize($_FILES["imgLink"]["tmp_name"]);
     if($check !== false) {
         $message = "<li>File is an image of type - " . $check["mime"] . ".</li>";
         $uploadOk = 1;
@@ -28,7 +28,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Verify the file size
-if ($_FILES["img_path"]["size"] > 500000) {
+if ($_FILES["imgLink"]["size"] > 500000) {
     $message = "<li>The file is too large.</li>";
     $uploadOk = 0;
 }
@@ -41,8 +41,8 @@ if($imageFileType != "jpg" && $imageFileType != "png") {
 if ($uploadOk == 0) {
     $message = "<li>The file was not uploaded.</li>";
 } else { // upload file
-    if (move_uploaded_file($_FILES["img_path"]["tmp_name"], $target_file)) {
-        $message = "<li>The file ". basename( $_FILES["img_path"]["name"]). " has been uploaded.</li>";
+    if (move_uploaded_file($_FILES["imgLink"]["tmp_name"], $target_file)) {
+        $message = "<li>The file ". basename( $_FILES["imgLink"]["name"]). " has been uploaded.</li>";
     } else {
         $message = "<li>Error uploading your file.</li>";
     }

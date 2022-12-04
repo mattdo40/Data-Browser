@@ -68,14 +68,18 @@ function display_obj_handler() {
 
 
 
-function loadElements(obj){
-  document.getElementById("pname").value = obj.pname;
-  document.getElementById("ptype").value = obj.ptype;
-  document.getElementById("num").value = obj.pokedexnum;
-  document.getElementById("pcaught").value = obj.pcaught;
-  document.getElementById("generation").value = obj.generation;
-  document.getElementById("loadImage").src = obj.imgLink;
+function loadElements(dbobj){
+  document.getElementById("pname").value = dbobj.pname;
+  document.getElementById("ptype").value = dbobj.ptype;
+  document.getElementById("num").value = dbobj.pokedexnum;
+  dbobj.pcaught == 1
+    ? (document.getElementById("caught").checked = true)
+    : (document.getElementById("notcaught").checked = true);
+  document.getElementById("generation").value = dbobj.generation;
+  document.getElementById("loadImage").src = dbobj.imgLink;
+  document.getElementById("pokemonId").value = dbobj.pokemonId;
 }
+
 
 
 
@@ -135,8 +139,8 @@ function toggleEdit() {
   }
 }
 
-function sortMovies(sort_criteria) {
-  send_request("POST", sort_criteria, "php/sortMovies.php", display_obj_handler);
+function sortPokemon(sort_criteria) {
+  send_request("POST", sort_criteria, "php/sortPokemon.php", display_obj_handler);
 }
 
 function displayPageNum() {

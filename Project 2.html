@@ -67,12 +67,14 @@
                     <h4 id = "pagenum"> </h4>
                     <input id="get" type="button" value="Get" onclick="getItem()" />
                     <input type="number" id="getItem" class="input_sm" value="" />
-                    <form id = "pokemonform">
+                    <form id = "pokemonform" method="POST" enctype="multipart/form-data">
                         
                 
                         <label for = "pname">Pokemon Name</label>
                         <input type = "text" id = "pname" name ="pname" value="" class = "inputs" >
                 
+                        <label for="pokemonId">Pokemon Id:</label>
+                        <input type="number" name="pokemonId" id="pokemonId"><br />
                                
                         <label for = "ptype">Type</label>
                         <input type = "text" id = "ptype" name = "ptype"  class = "inputs" >
@@ -86,14 +88,20 @@
                         <input id = "generation" name = "generation" type = "number" class = "inputs" >
                                     
                               
-                        <label for = "">Caught?</label>
-                        <input type = "text" id = "pcaught" name = "pcaught"  class = "inputs" >
-                          
+                        <label for = "caught">Caught?</label>
+                        Yes<input type="radio" name="caught" id="caught" value="1" />
+                         No<input type="radio" name="caught" id="notcaught"value="0"/>
+                        
+                        
+                        <label for = "imgLink">Select an image to upload</label> <br>
+                        <input type="file" name="imgLink" id="imgLink"> <br>
+
+                      
+                
+                        <input id= "add" type="submit" value="Add" class="float-right" formaction="php/addPokemon.php"/>
+
                     </form>
-                    <div id = "uploadbutton">
-                        <button id="upload" class="float-right" onclick="uploadItem()">
-                        Upload Image<img src="imgs/upload.png" alt="upload icon" width="15px" />
-                        </button>
+                
 
                     <input id="sortbyNameButton" type="button" value="Title" onclick="sortMovies(this.value)"/>
                     <input id="sortbyIndexButton" type="button" value="Index" onclick="sortMovies(this.value)"/>
@@ -119,6 +127,9 @@
 
                     <input id="add" type="submit" value="Add" class="float-right" formaction="php/addPokemon.php"/>
                     <input id="delete" type="submit" value="Delete" class="float-right" formaction="php/deletePokemon.php"/>
+                </div>
+                <div>
+            
                 </div>
                 
 
