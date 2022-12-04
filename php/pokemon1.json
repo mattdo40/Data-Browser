@@ -1,0 +1,42 @@
+[
+        {
+            "pname": "Squirtle",
+            "ptype": "Water",
+            "pokedexnum": 7,
+            "pcaught" : true,
+            "generation": 1,
+            "imgLink": "imgs/squirtle.jpg"
+        },
+        {
+            "pname": "Cyndaquil",
+            "ptype": "Fire",
+            "pokedexnum": 155,
+            "pcaught" : false,
+            "generation": 2,
+            "imgLink": "imgs/cyndaquil.jpg"
+        },
+        {
+            "pname": "Poochyena",
+            "ptype": "Dark",
+            "pokedexnum": 261,
+            "pcaught" : true,
+            "generation": 3,
+            "imgLink": "imgs/poochyena.jpg"
+        },
+        {
+            "pname": "Lucario",
+            "ptype": "Fighting/Steel",
+            "pokedexnum": 448,
+            "pcaught" : true,
+            "generation": 4,
+            "imgLink": "imgs/lucario.jpg"
+        },
+        {
+            "pname": "Drilbur",
+            "ptype": "Ground",
+            "pokedexnum": 529,
+            "pcaught" : false,
+            "generation": 5,
+            "imgLink": "php/imgs/drilbur.jpg"
+        }
+    ]

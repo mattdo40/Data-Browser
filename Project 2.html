@@ -69,7 +69,6 @@
                     <input type="number" id="getItem" class="input_sm" value="" />
                     <form id = "pokemonform" method="POST" enctype="multipart/form-data">
                         
-                
                         <label for = "pname">Pokemon Name</label>
                         <input type = "text" id = "pname" name ="pname" value="" class = "inputs" >
                 
@@ -98,8 +97,10 @@
 
                       
                 
-                        <input id= "add" type="submit" value="Add" class="float-right" formaction="php/addPokemon.php"/>
-
+                        <input id= "add" type="submit" value="Add" formaction="php/addPokemon.php"> <br>
+                        <input id="update" type="submit" value="Update" formaction="php/updatePokemon.php"> <br>
+                        <input id= "delete" type="submit" value="Delete"  formaction="php/deletePokemon.php">
+                        <input id= "updateJSON" type="submit" value="updateJSON"  formaction="php/updateJSON.php">
                     </form>
                 
 
@@ -122,14 +123,6 @@
                     
                     <a class = "skipButtonA"  onclick = "skipForward()"> Last <img class = "buttons" src = "imgs/farrightbutton.png" id = "scrollfarright"></a>
 
-                </div>
-                <div>
-
-                    <input id="add" type="submit" value="Add" class="float-right" formaction="php/addPokemon.php"/>
-                    <input id="delete" type="submit" value="Delete" class="float-right" formaction="php/deletePokemon.php"/>
-                </div>
-                <div>
-            
                 </div>
                 
 

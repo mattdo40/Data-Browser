@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Web Programming - CSci 130</title>
+</head>
+<body>
+<script>
+
+let index=0;
+let indexmax=0;
+var mydata;
+
+function goPrevious() {
+    if (index!=-1) {
+	if (index==0)
+		index=0;
+	else
+		index--;
+	FillForm(mydata[index]);
+	}	
+}
+
+function goNext() {
+	if (index!=-1) {
+	if (index==indexmax-1)
+		index=indexmax-1;
+	else
+		index++;
+	FillForm(mydata[index]);	
+	}
+}
+
+function Add() {
+	indexmax++;
+	index=indexmax-1;
+	mydata[index]=JSON.parse(JSON.stringify(mydata[0]));
+	mydata[index]['first_name']="";
+	mydata[index]['last_name']="";
+	mydata[index]['address']="";
+	mydata[index]['dob']="";
+	mydata[index]['id']="";
+	mydata[index]['current_gpa']="";
+	mydata[index]['current_units']="";
+	EmptyForm();
+}
+
+function Saverecord() {
+	mydata[index]['first_name']=document.getElementById("first_name").value;
+	mydata[index]['last_name']=document.getElementById("last_name").value;
+	mydata[index]['address']=document.getElementById("address").value;
+	mydata[index]['dob']=document.getElementById("dob").value;
+	mydata[index]['id']=document.getElementById("idnum").value;
+	mydata[index]['current_gpa']=document.getElementById("gpa").value;
+	mydata[index]['current_units']=document.getElementById("units").value;
+}
+
+var saverequest;
+function Savefile() {
+    saverequest = new XMLHttpRequest();
+    if (!saverequest) {
+      alert('Cannot create an XMLHTTP instance');
+      return false;
+    }
+    str=JSON.stringify(mydata);
+    saverequest.onreadystatechange = alertContents;
+    saverequest.open('POST','savefile.php');
+  //  saverequest.setRequestHeader('Content-Type','application/json');
+	saverequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    saverequest.send('mynewdata=' + encodeURIComponent(str) ); 
+}
+
+function alertContents() {
+  try {
+    if (saverequest.readyState === XMLHttpRequest.DONE) {
+      if (saverequest.status === 200) {
+		//	var response = JSON.parse(saverequest.responseText);
+			alert('Saved file');
+	//	alert(saverequest.responseText);
+	  } else {
+        alert('There was a problem with the request.');
+      }
+    }
+  }
+  catch( e ) {
+    alert('Caught Exception: ' + e.description);
+  }
+}
+
+function EmptyForm() {
+	document.getElementById("first_name").value="";
+	document.getElementById("last_name").value="";
+	document.getElementById("address").value="";
+	document.getElementById("dob").value="";
+	document.getElementById("idnum").value="";
+	document.getElementById("gpa").value="";
+	document.getElementById("units").value="";
+	document.getElementById("vindex").value=index;
+}
+
+function FillForm(jsonObj) {
+	// alert(index);
+	document.getElementById("first_name").value=jsonObj['first_name'];
+	document.getElementById("last_name").value=jsonObj['last_name'];
+	document.getElementById("address").value=jsonObj['address'];
+	document.getElementById("dob").value=jsonObj['dob'];
+	document.getElementById("idnum").value=jsonObj['id'];
+	document.getElementById("gpa").value=jsonObj['current_gpa'];
+	document.getElementById("units").value=jsonObj['current_units'];
+	document.getElementById("vindex").value=index;
+}
+
+	// In this example, we load the whole dataset at the beginning
+    var requestURL = "mydatabase.json";
+    httprequest = new XMLHttpRequest(); 
+	httprequest.open('GET', requestURL);
+    // httprequest.responseType = 'json';
+    httprequest.send();
+	httprequest.onload = function() {
+    mydata = httprequest.responseText;	
+	// alert(mydata);
+	mydata = JSON.parse(mydata);
+	// Now we have access the whole JSON file
+	
+	indexmax=mydata.length;
+	if (indexmax>0) {
+		index=0;
+		//alert(mydata[0]);
+		FillForm(mydata[0]);
+    }
+	else
+		index=-1;		
+	var v=document.getElementById("vindex");
+	v.value=index;	
+	}
+	 
+</script>
+
+<h1>Student</h1>
+
+<!-- the main form -->
+<section>
+<table>
+<tbody><tr><td>First Name: <input type="text" id="first_name" value="2OsD2ztKTC"></td></tr><tr>
+</tr><tr><td>Last Name: <input type="text" id="last_name" value="xaSGo2Pa0m"></td></tr><tr>
+</tr><tr><td>Address: <input type="text" id="address" value="NkzQPcmHruO8ADaN3XIP"></td></tr><tr>
+</tr><tr><td>DOB: <input type="text" id="dob" value="1967-3-20"></td></tr><tr>
+</tr><tr><td>ID number: <input type="text" id="idnum" value="10174"></td></tr><tr>
+</tr><tr><td>GPA: <input type="text" id="gpa" value="2"></td></tr><tr>
+</tr><tr><td>Units: <input type="text" id="units" value="10"></td></tr><tr>
+</tr><tr><td>Index: <input type="text" id="vindex" value="0"></td></tr><tr>
+</tr></tbody></table>
+</section>
+
+<!-- navigation button -->
+<section>
+<button onclick="goPrevious()">Previous</button>
+<button onclick="goNext()">Next</button>
+<button onclick="Add()">Add</button>
+<button onclick="Savefile()">Save file</button>
+<button onclick="Saverecord()">Save record</button>
+</section>
+
+
+</body></html>

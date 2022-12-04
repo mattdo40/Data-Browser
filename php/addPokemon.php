@@ -16,7 +16,8 @@
   $curr_img = $result->fetch_assoc();
   $curr_img = $curr_img["imgPath"];
 
-  // no img chosen
+// The below code is used for testing purposes. Removing the header line lets you see the echo messages.
+ // check if there is no image chosen
   if($input_path == NULL){
     $set_img_path = NULL;
   }
@@ -38,6 +39,7 @@
       echo "add movie Error: " . $sql . "<br>" . $conn->error;
     }
   $conn->close();
-  //header("Location: ./Project 2.html");
+  //have to add this line to redirect to the main page
+  header("Location: ../Project 2.html");
 
 ?>
