@@ -36,7 +36,7 @@ pkey INT(6) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 pname  VARCHAR(30) NOT NULL,
 ptype   VARCHAR(30) NOT NULL,
 pokedexnum  INT(4) NOT NULL,
-pcaught  TINYINT(1) NOT NULL,
+legendary  TINYINT(1) NOT NULL,
 generation INT(4) NOT NULL,
 imgLink VARCHAR(100)
 )";
@@ -48,7 +48,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 
-$stmt = $conn->prepare("INSERT INTO pokemonTable (pname, ptype, pokedexnum, pcaught, generation, imgLink) VALUES (?,?,?,?,?,?)");
+$stmt = $conn->prepare("INSERT INTO pokemonTable (pname, ptype, pokedexnum, legendary, generation, imgLink) VALUES (?,?,?,?,?,?)");
 if ($stmt==FALSE) {
 	echo "There is a problem with prepare <br>";
 	echo $conn->error; // Need to connect/reconnect before the prepare call otherwise it doesnt work
@@ -59,7 +59,7 @@ if ($stmt==FALSE) {
 // d - double
 // s - string
 // b - BLOB: a binary large object that can hold a variable amount of data
-$stmt->bind_param("ssiiis", $pname, $ptype, $pokedexnum, $pcaught, $generation, $imgLink);
+$stmt->bind_param("ssiiis", $pname, $ptype, $pokedexnum, $legendary, $generation, $imgLink);
 
 // load json data into table
 $json_str = file_get_contents('pokemon.json');
@@ -70,7 +70,7 @@ for ($i=0;$i<$count;$i++) {
     $pname = $pokemonArr[$i]->pname;
     $ptype = $pokemonArr[$i]->ptype;
     $pokedexnum = $pokemonArr[$i]->pokedexnum;
-    $pcaught = $pokemonArr[$i]->pcaught;
+    $legendary = $pokemonArr[$i]->legendary;
     $generation =$pokemonArr[$i]->generation;
     $imgLink=$pokemonArr[$i]->imgLink;
     $stmt->execute();

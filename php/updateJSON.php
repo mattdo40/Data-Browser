@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error ."<br>");
 } 
 
-    $sql = "SELECT pname, ptype, pokedexnum, pcaught, generation, imgLink FROM pokemonTable";
+    $sql = "SELECT pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemonTable";
     $result = $conn->query($sql);
     $pokemonArr= array();
     while($row =mysqli_fetch_assoc($result)) {

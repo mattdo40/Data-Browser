@@ -20,11 +20,11 @@ var curr_index = 0;
 var httpRequest;
 var dbobj;
 function loadDB() {
-  send_request("POST", "array=", "php/mySQLdata.php", display_obj_handler);
+  requestHandler("POST", "array=", "php/mySQLdata.php", getPokemon);
 }
 
-function getItem() {
-  let input = document.getElementById("getItem").value - 1;
+function searchIndex() {
+  let input = document.getElementById("searchIndex").value - 1;
   if (input > max || input < 0) {
     alert("Invalid Input");
     return;
@@ -34,7 +34,7 @@ function getItem() {
   displayPageNum();
 }
 
-function send_request(action, send_str, path, callback) {
+function requestHandler(action, send_str, path, callback) {
   httpRequest = new XMLHttpRequest();
   if (!httpRequest) {
     alert("Cannot create an XMLHTTP instance");
@@ -48,7 +48,7 @@ function send_request(action, send_str, path, callback) {
   );
   httpRequest.send(send_str);
 }
-function display_obj_handler() {
+function getPokemon() {
   try {
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
       if (httpRequest.status === 200) {
@@ -66,21 +66,17 @@ function display_obj_handler() {
 }
 
 
-
-
 function loadElements(dbobj){
   document.getElementById("pname").value = dbobj.pname;
   document.getElementById("ptype").value = dbobj.ptype;
   document.getElementById("num").value = dbobj.pokedexnum;
-  dbobj.pcaught == 1
-    ? (document.getElementById("caught").checked = true)
-    : (document.getElementById("notcaught").checked = true);
+  dbobj.legendary == 1
+    ? (document.getElementById("legendary").checked = true)
+    : (document.getElementById("notlegendary").checked = true);
   document.getElementById("generation").value = dbobj.generation;
   document.getElementById("loadImage").src = dbobj.imgLink;
   document.getElementById("pokemonId").value = dbobj.pokemonId;
 }
-
-
 
 
 function prev(){
@@ -114,7 +110,7 @@ function skipBack(){
 
 }  
 
-function send_request(action, send_str, path, callback) {
+function requestHandler(action, send_str, path, callback) {
   httpRequest = new XMLHttpRequest();
   if (!httpRequest) {
     alert("Cannot create an XMLHTTP instance");
@@ -140,7 +136,7 @@ function toggleEdit() {
 }
 
 function sortPokemon(sort_criteria) {
-  send_request("POST", sort_criteria, "php/sortPokemon.php", display_obj_handler);
+  requestHandler("POST", sort_criteria, "php/sortPokemon.php", getPokemon);
 }
 
 function displayPageNum() {
@@ -148,4 +144,4 @@ function displayPageNum() {
     "Results " + (curr_index + 1) + "/" + (max + 1);
 }
 loadDB();
-//toggleEdit();
+

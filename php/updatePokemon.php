@@ -37,7 +37,7 @@ if($input_path == NULL && $curr_img != NULL){
     if ($uploadOk == 0){echo ($message);} 
   }
 
-  $sql = "UPDATE pokemontable SET pname ='$set_pname', ptype='$set_ptype', pokedexnum='$set_pokedexnum', pcaught='$set_pcaught', generation='$set_generation',imgLink='$set_img_path' WHERE pkey = $set_pokemonId;";
+  $sql = "UPDATE pokemontable SET pname ='$set_pname', ptype='$set_ptype', pokedexnum='$set_pokedexnum', legendary='$set_pcaught', generation='$set_generation',imgLink='$set_img_path' WHERE pkey = $set_pokemonId;";
 
   if ($conn->query($sql) === TRUE) {
       echo $set_pname . " created successfully" ;

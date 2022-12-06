@@ -8,11 +8,11 @@
     $total = $total["Total"];
     
     if (isset($_POST['Title'])){
-        $sql = "SELECT pkey, pname, ptype, pokedexnum, pcaught, generation, imgLink FROM pokemonTable ORDER BY pname ASC";
+        $sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemonTable ORDER BY pname ASC";
     
     }
     if (isset($_POST['Index'])){
-        $sql = "SELECT pkey, pname, ptype, pokedexnum, pcaught, generation, imgLink FROM pokemonTable ORDER BY pokemonTable.pkey ASC";
+        $sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemonTable ORDER BY pokemonTable.pkey ASC";
     }
     $result = $conn->query($sql);
 
@@ -25,7 +25,7 @@
             $newPokemon->pname=($row["pname"]);
             $newPokemon->ptype=($row["ptype"]);
             $newPokemon->pokedexnum=($row["pokedexnum"]);
-            $newPokemon->pcaught=($row["pcaught"]);
+            $newPokemon->legendary=($row["legendary"]);
             $newPokemon->generation=$row["generation"];
             $newPokemon->imgLink=($row["imgLink"]);
             $pokemonArr[$i]=$newPokemon;

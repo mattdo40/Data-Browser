@@ -7,7 +7,7 @@ if (isset($_POST["Index"])) {
 	$index =(int)$_POST["Index"];
 
 	// Selection of data 
-	$sql = "SELECT pkey, pname, ptype, pokedexnum, pcaught, generation, imgLink FROM pokemonTable WHERE pkey=". $index;
+	$sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemonTable WHERE pkey=". $index;
 	$result = $conn->query($sql);
 
 	//if row exists from query, get it and assign row's col-name 
@@ -18,7 +18,7 @@ if (isset($_POST["Index"])) {
 		$newPokemon->pname=($row["pname"]);
         $newPokemon->ptype=($row["ptype"]);
 		$newPokemon->pokedexnum=($row["pokedexnum"]);
-		$newPokemon->pcaught=($row["pcaught"]);
+		$newPokemon->legendary=($row["legendary"]);
 		$newPokemon->generation=$row["generation"];
 		$newPokemon->imgLink=($row["imgLink"]);
 		}
@@ -39,7 +39,7 @@ if (isset($_POST["array"])) {
 	$total = $total["Total"];
 	
 	// Selection of data 
-	$sql = "SELECT pkey, pname, ptype, pokedexnum, pcaught, generation, imgLink FROM pokemonTable";
+	$sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemonTable";
 	$result = $conn->query($sql);
 
    
@@ -53,7 +53,7 @@ if (isset($_POST["array"])) {
             $newPokemon->pname=($row["pname"]);
             $newPokemon->ptype=($row["ptype"]);
             $newPokemon->pokedexnum=($row["pokedexnum"]);
-            $newPokemon->pcaught=($row["pcaught"]);
+            $newPokemon->legendary=($row["legendary"]);
             $newPokemon->generation=$row["generation"];
             $newPokemon->imgLink=($row["imgLink"]);
             $pokemonArr[$i]=$newPokemon;

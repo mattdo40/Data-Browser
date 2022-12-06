@@ -1,1 +1,42 @@
-[{"pname":"Turtwig","ptype":"Water","pokedexnum":"7","pcaught":"1","generation":"1","imgLink":"imgs\/squirtle.jpg"},{"pname":"Cyndaquil","ptype":"Fire","pokedexnum":"155","pcaught":"0","generation":"2","imgLink":"imgs\/cyndaquil.jpg"},{"pname":"Poochyena","ptype":"Dark","pokedexnum":"261","pcaught":"1","generation":"3","imgLink":"imgs\/poochyena.jpg"},{"pname":"Lucario","ptype":"Fighting\/Steel","pokedexnum":"448","pcaught":"1","generation":"4","imgLink":"imgs\/lucario.jpg"},{"pname":"Drilbur","ptype":"Ground","pokedexnum":"529","pcaught":"0","generation":"34","imgLink":"php\/imgs\/drilbur.jpg"},{"pname":"Turtwig","ptype":"Water","pokedexnum":"7","pcaught":"1","generation":"1","imgLink":"imgs\/squirtle.jpg"},{"pname":"Cyndaquil","ptype":"Fire","pokedexnum":"155","pcaught":"0","generation":"2","imgLink":"imgs\/cyndaquil.jpg"},{"pname":"Poochyena","ptype":"Dark","pokedexnum":"261","pcaught":"1","generation":"3","imgLink":"imgs\/poochyena.jpg"},{"pname":"Lucario","ptype":"Fighting\/Steel","pokedexnum":"448","pcaught":"1","generation":"4","imgLink":"imgs\/lucario.jpg"},{"pname":"Drilbur","ptype":"Ground","pokedexnum":"529","pcaught":"0","generation":"34","imgLink":"php\/imgs\/drilbur.jpg"},{"pname":"Turtwig","ptype":"Water","pokedexnum":"7","pcaught":"1","generation":"1","imgLink":"imgs\/squirtle.jpg"},{"pname":"Cyndaquil","ptype":"Fire","pokedexnum":"155","pcaught":"0","generation":"2","imgLink":"imgs\/cyndaquil.jpg"},{"pname":"Poochyena","ptype":"Dark","pokedexnum":"261","pcaught":"1","generation":"3","imgLink":"imgs\/poochyena.jpg"},{"pname":"Lucario","ptype":"Fighting\/Steel","pokedexnum":"448","pcaught":"1","generation":"4","imgLink":"imgs\/lucario.jpg"},{"pname":"Drilbur","ptype":"Ground","pokedexnum":"529","pcaught":"0","generation":"34","imgLink":"php\/imgs\/drilbur.jpg"},{"pname":"Turtwig","ptype":"Water","pokedexnum":"7","pcaught":"1","generation":"1","imgLink":"imgs\/squirtle.jpg"},{"pname":"Cyndaquil","ptype":"Fire","pokedexnum":"155","pcaught":"0","generation":"2","imgLink":"imgs\/cyndaquil.jpg"},{"pname":"Poochyena","ptype":"Dark","pokedexnum":"261","pcaught":"1","generation":"3","imgLink":"imgs\/poochyena.jpg"},{"pname":"Lucario","ptype":"Fighting\/Steel","pokedexnum":"448","pcaught":"1","generation":"4","imgLink":"imgs\/lucario.jpg"},{"pname":"Drilbur","ptype":"Ground","pokedexnum":"529","pcaught":"0","generation":"34","imgLink":"php\/imgs\/drilbur.jpg"}]
+[
+    {
+        "pname": "Squirtle",
+        "ptype": "Water",
+        "pokedexnum": 7,
+        "legendary" : true,
+        "generation": 1,
+        "imgLink": "imgs/squirtle.jpg"
+    },
+    {
+        "pname": "Cyndaquil",
+        "ptype": "Fire",
+        "pokedexnum": 155,
+        "legendary" : false,
+        "generation": 2,
+        "imgLink": "imgs/cyndaquil.jpg"
+    },
+    {
+        "pname": "Poochyena",
+        "ptype": "Dark",
+        "pokedexnum": 261,
+        "legendary" : true,
+        "generation": 3,
+        "imgLink": "imgs/poochyena.jpg"
+    },
+    {
+        "pname": "Lucario",
+        "ptype": "Fighting/Steel",
+        "pokedexnum": 448,
+        "legendary" : true,
+        "generation": 4,
+        "imgLink": "imgs/lucario.jpg"
+    },
+    {
+        "pname": "Drilbur",
+        "ptype": "Ground",
+        "pokedexnum": 529,
+        "legendary" : false,
+        "generation": 5,
+        "imgLink": "imgs/drilbur.jpg"
+    }
+]
