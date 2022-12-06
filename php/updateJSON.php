@@ -29,4 +29,5 @@ if ($conn->connect_error) {
 	
     //close the db connection
     mysqli_close($conn);
+    header("Location: ../Project 2.html");
 ?>

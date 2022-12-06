@@ -2,48 +2,10 @@
 <html lang = "en">
 <head>
     <style>
-        #scrollright {
-           /* background-image:url(Rightbutton.png);*/
-            background-size: cover;
-            width: 60px;
-            height: 60px;
-        }
-        #scrollleft {
-            /*background-image:url(button.png);*/
-            background-size: cover;
-            width: 60px;
-            height: 60px;
-        }
-        #scrollfarleft {
-            /*background-image:url(farleftbutton.png);*/
-            background-size: cover;
-            width: 60px;
-            height: 60px;
-
-        }
-        #scrollfarright {
-            /*background-image:url(farrightbutton.png);*/
-            background-size: cover;
-            width: 60px;
-            height: 60px;
-        }
-        #infodisplay {
-            background-image:url();
-            background-size:cover;
-            width: auto;
-            height: 60px;
-            margin: auto;
-
-
-        }
-        #bodyheader {
-            margin:auto;
-            width: auto;
-            text-align: center;
-            
-        }
+        
     </style>
     <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="DB.css">
     <script src = "loadPokemon.js"> </script>
 </head>
 
@@ -73,7 +35,7 @@
                         <input type = "text" id = "pname" name ="pname" value="" class = "inputs" >
                 
                         <label for="pokemonId">Pokemon Id:</label>
-                        <input type="number" name="pokemonId" id="pokemonId"><br />
+                        <input type="number" name="pokemonId" id="pokemonId"><br >
                                
                         <label for = "ptype">Type</label>
                         <input type = "text" id = "ptype" name = "ptype"  class = "inputs" >
@@ -88,8 +50,8 @@
                                     
                               
                         <label for = "caught">Caught?</label>
-                        Yes<input type="radio" name="caught" id="caught" value="1" />
-                         No<input type="radio" name="caught" id="notcaught"value="0"/>
+                        Yes<input type="radio" name="caught" id="caught" value="1">
+                         No<input type="radio" name="caught" id="notcaught"value="0"> <br>
                         
                         
                         <label for = "imgLink">Select an image to upload</label> <br>
@@ -98,14 +60,14 @@
                       
                 
                         <input id= "add" type="submit" value="Add" formaction="php/addPokemon.php"> <br>
-                        <input id="update" type="submit" value="Update" formaction="php/updatePokemon.php"> <br>
-                        <input id= "delete" type="submit" value="Delete"  formaction="php/deletePokemon.php">
+                        <input id= "update" type="submit" value="Update" formaction="php/updatePokemon.php"> <br>
+                        <input id= "delete" type="submit" value="Delete"  formaction="php/deletePokemon.php"> <br>
                         <input id= "updateJSON" type="submit" value="updateJSON"  formaction="php/updateJSON.php">
                     </form>
                 
 
-                    <input id="sortbyNameButton" type="button" value="Title" onclick="sortMovies(this.value)"/>
-                    <input id="sortbyIndexButton" type="button" value="Index" onclick="sortMovies(this.value)"/>
+                    <input id="sortbyNameButton" type="button" value="Title" onclick="sortPokemon(this.value)">
+                    <input id="sortbyIndexButton" type="button" value="Index" onclick="sortPokemon(this.value)">
                      <div class = "buttonDiv">
                     
                         <a class ="buttonA" onclick = "prev()"> Prev <img class = "buttons" src = "imgs/Leftbutton.png" id = "scrollleft" ></a>

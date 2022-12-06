@@ -55,7 +55,7 @@ function display_obj_handler() {
         dbobj = JSON.parse(httpRequest.responseText);
         max = parseInt(dbobj.pop()) - 1;
         loadElements(dbobj[curr_index]);
-       // displayPageNum();
+       displayPageNum();
       } else {
         alert("There was a problem with the request.");
       }
@@ -148,4 +148,4 @@ function displayPageNum() {
     "Results " + (curr_index + 1) + "/" + (max + 1);
 }
 loadDB();
-toggleEdit();
+//toggleEdit();
