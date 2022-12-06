@@ -7,7 +7,6 @@
     $total = $result->fetch_assoc();
     $total = $total["Total"];
     
-    // sort by movie title
     if (isset($_POST['Title'])){
         $sql = "SELECT pkey, pname, ptype, pokedexnum, pcaught, generation, imgLink FROM pokemonTable ORDER BY pname ASC";
     
@@ -20,7 +19,7 @@
 
     // get the sort results back 
     $i=0;
-    $pokemonArr= Array();
+    $pokemonArr = Array();
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $newPokemon= new Pokemon();
