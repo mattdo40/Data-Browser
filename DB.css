@@ -1,0 +1,40 @@
+#scrollright {
+    /* background-image:url(Rightbutton.png);*/
+     background-size: cover;
+     width: 60px;
+     height: 60px;
+ }
+ #scrollleft {
+     /*background-image:url(button.png);*/
+     background-size: cover;
+     width: 60px;
+     height: 60px;
+ }
+ #scrollfarleft {
+     /*background-image:url(farleftbutton.png);*/
+     background-size: cover;
+     width: 60px;
+     height: 60px;
+
+ }
+ #scrollfarright {
+     /*background-image:url(farrightbutton.png);*/
+     background-size: cover;
+     width: 60px;
+     height: 60px;
+ }
+ #infodisplay {
+     background-image:url();
+     background-size:cover;
+     width: auto;
+     height: 60px;
+     margin: auto;
+
+
+ }
+ #bodyheader {
+     margin:auto;
+     width: auto;
+     text-align: center;
+     
+ }

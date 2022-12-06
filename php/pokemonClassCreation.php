@@ -12,7 +12,6 @@ function generateRandomString($pokedexnum = 10) {
 }
 
 class Pokemon implements JsonSerializable{
-    // the pokemon id is set to the pkey from mysql
     public $pokemonId;
     public $pname;
     public $ptype;

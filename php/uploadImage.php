@@ -1,6 +1,6 @@
 <?php
-$target_dir = "../imgs/"; // you must create this directory in the folder where you have the PHP file
-$target_file = $target_dir . basename($_FILES["imgLink"]["name"]);
+$targetDir = "../imgs/";
+$target_file = $targetDir . basename($_FILES["imgLink"]["name"]);
 
 echo "<p>Upload information</p><ul>";
 echo  "<li>Target folder for the upload :". $target_file . "</li>";
@@ -10,7 +10,7 @@ echo  "<li>File name :". basename($_FILES["imgLink"]["name"]) . "</li>";
 $uploadOk = 1;
 
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Verify if the image file is an actual image or a fake image
+
 if(isset($_POST["submit"])) {
   
     $check = getimagesize($_FILES["imgLink"]["tmp_name"]);

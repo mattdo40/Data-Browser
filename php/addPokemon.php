@@ -36,7 +36,7 @@
   if ($conn->query($sql) === TRUE) {
       echo $set_pname . " created successfully" ;
     } else {
-      echo "add movie Error: " . $sql . "<br>" . $conn->error;
+      echo "add Pokemon Error: " . $sql . "<br>" . $conn->error;
     }
   $conn->close();
   //have to add this line to redirect to the main page
