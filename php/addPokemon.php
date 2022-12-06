@@ -5,7 +5,7 @@
   if (isset($_POST['pname'])){$set_pname = $_POST['pname'];};
   if (isset($_POST['ptype'])){$set_ptype = $_POST['ptype'];};
   if (isset($_POST['num'])){$set_pokedexnum = $_POST['num'];};
-  if (isset($_POST['caught'])){$set_pcaught = $_POST['caught'];};
+  if (isset($_POST['legendary'])){$set_pcaught = $_POST['legendary'];};
   if (isset($_POST['generation'])){$set_generation = $_POST['generation'];};
   if (isset($_POST['pokemonId'])){$set_pokemonId = $_POST['pokemonId'];};
 
