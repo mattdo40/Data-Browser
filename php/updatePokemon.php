@@ -4,8 +4,8 @@
 
   if (isset($_POST['pname'])){$setPname = $_POST['pname'];};
   if (isset($_POST['ptype'])){$setPtype = $_POST['ptype'];};
-  if (isset($_POST['num'])){$set_pokedexnum = $_POST['num'];};
-  if (isset($_POST['caught'])){$set_Legendary = $_POST['caught'];};
+  if (isset($_POST['num'])){$setPokedexnum = $_POST['num'];};
+  if (isset($_POST['caught'])){$setLegendary = $_POST['caught'];};
   if (isset($_POST['generation'])){$setGeneration = $_POST['generation'];};
   if (isset($_POST['pokemonId'])){$setPokemonId = $_POST['pokemonId'];};
 
@@ -37,7 +37,7 @@ if($inputPath == NULL && $currImg != NULL){
     if ($uploadOk == 0){echo ($message);} 
   }
 
-  $sql = "UPDATE pokemontable SET pname ='$setPname', ptype='$setPtype', pokedexnum='$set_pokedexnum', legendary='$set_Legendary', generation='$setGeneration',imgLink='$setPath' WHERE pkey = $setPokemonId;";
+  $sql = "UPDATE pokemontable SET pname ='$setPname', ptype='$setPtype', pokedexnum='$setPokedexnum', legendary='$setLegendary', generation='$setGeneration',imgLink='$setPath' WHERE pkey = $setPokemonId;";
 
   if ($conn->query($sql) === TRUE) {
       echo $setPname . " created successfully" ;

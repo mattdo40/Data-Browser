@@ -40,6 +40,6 @@
     }
   $conn->close();
   //have to add this line to redirect to the main page
-  header("Location: ../Project 2.html");
+  //header("Location: ../Project 2.html");
 
 ?>
