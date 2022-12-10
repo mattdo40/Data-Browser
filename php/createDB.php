@@ -1,11 +1,6 @@
 <?php
 include "pokemonClassCreation.php";
-
-$servername = "localhost"; // default server name
-$username = "matt"; // user name that you created
-$password = "matt"; // password that you created
-$dbname = "pokemonDB";
-
+include "connectDB.php";
 // Create connection
 $conn = new mysqli($servername, $username, $password);
 
