@@ -1,35 +1,50 @@
 <?php
 $targetDir = "../imgs/";
-$targetFile = $targetDir . basename($_FILES["imgLink"]["name"]);
+$target_file = $targetDir . basename($_FILES["imgLink"]["name"]);
+
+echo "<p>Upload information</p><ul>";
+echo  "<li>Target folder for the upload :". $target_file . "</li>";
+echo  "<li>File name :". basename($_FILES["fileup"]["name"]) . "</li>";
+
 
 $uploadOk = 1;
 
-$imageFileType = pathinfo($targetFile,PATHINFO_EXTENSION);
-
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Verify if the image file is an actual image or a fake image
 if(isset($_POST["submit"])) {
-  
-    $check = getimagesize($_FILES["imgLink"]["tmp_name"]);
+    $check = getimagesize($_FILES["fileup"]["tmp_name"]);
     if($check !== false) {
-        $message = "<div>File is an image of type - " . $check["mime"] . ".</div>";
+        echo "<li>File is an image of type - " . $check["mime"] . ".</li>";
         $uploadOk = 1;
     } else {
-        $message = "<div>File is not an image.</div>";
+        echo "<li>File is not an image.</li>";
         $uploadOk = 0;
     }
 }
-
-if($imageFileType != "jpg" && $imageFileType != "png") {
-    $message = "<div> Only jpg and png files are allowed </div>";
+// Verify if file already exists
+if (file_exists($target_file)) {
+    echo "<li>The file already exists.</li>";
     $uploadOk = 0;
 }
-
+// Verify the file size
+if ($_FILES["fileup"]["size"] > 500000) {
+    echo "<li>The file is too large.</li>";
+    $uploadOk = 0;
+}
+// Verify certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png") {
+    echo "<li>Only jpg and png files are allowed for the upload.</li>";
+    $uploadOk = 0;
+}
+// Verify if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    $message = "<div>The file was not uploaded.</div>";
+    echo "<li>The file was not uploaded.</li>";
 } else { // upload file
-    if (move_uploaded_file($_FILES["imgLink"]["tmp_name"], $targetFile)) {
-        $message = "<div>The file ". basename( $_FILES["imgLink"]["name"]). " has been uploaded.</div>";
+    if (move_uploaded_file($_FILES["fileup"]["tmp_name"], $target_file)) {
+        echo "<li>The file ". basename( $_FILES["fileup"]["name"]). " has been uploaded.</li>";
     } else {
-        $message = "<div>Error uploading your file.</div>";
+        echo "<li>Error uploading your file.</li>";
     }
 }
+
 ?>
