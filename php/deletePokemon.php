@@ -1,12 +1,22 @@
 <?php
     include "connectDB.php";
-    if (isset($_POST['pokemonId'])){$input_pokemonId = $_POST['pokemonId'];};
 
-    $sql = "DELETE FROM pokemontable WHERE pkey = $input_pokemonId";
 
-    // Test function to see if the delete query works
+    // Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error ."<br>");
+} 
+echo "Connected successfully <br>";
+    if (isset($_POST['pokemonId'])){$inputPokemonId = $_POST['pokemonId'];};
+
+    $sql = "DELETE FROM pokemontable WHERE pkey = $inputPokemonId";
+
+  
     if ($conn->query($sql) === TRUE) {
-       // echo "Record deleted successfully";
+       //echo "Deleted successfully";
       } else {
        // echo "delete Pokemon Error: " . $sql . "<br>" . $conn->error;
       }
