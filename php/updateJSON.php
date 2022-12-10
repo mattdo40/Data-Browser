@@ -1,12 +1,6 @@
 <?php
 
-define('DB_SERVER',  "localhost");
-define('DB_USERNAME',  "root");
-define('DB_PASSWORD',  "");
-define('DB_NAME',  "pokemondb"); 
-
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
+include "connectDB.php";
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error ."<br>");
@@ -18,9 +12,9 @@ if ($conn->connect_error) {
     while($row =mysqli_fetch_assoc($result)) {
         $pokemonArr[] = $row;
     }
-   echo json_encode($pokemonArr, JSON_PRETTY_PRINT);
+   //echo json_encode($pokemonArr, JSON_PRETTY_PRINT);
     
-    $string=json_encode($pokemonArr);
+    $string=json_encode($pokemonArr, JSON_PRETTY_PRINT);
 
 	$f = fopen("pokemon.json","w");
 	fwrite($f,$string);
@@ -28,6 +22,6 @@ if ($conn->connect_error) {
 
 	
     //close the db connection
-    mysqli_close($conn);
+    $conn->close();
     header("Location: ../Project 2.html");
 ?>

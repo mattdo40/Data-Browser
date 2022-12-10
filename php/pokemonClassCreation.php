@@ -1,4 +1,6 @@
 <?php
+
+include "connectDB.php";
 // function from class examples
 function generateRandomString($pokedexnum = 10) {
 	// list of characters that can be present in the string
@@ -12,7 +14,6 @@ function generateRandomString($pokedexnum = 10) {
 }
 
 class Pokemon implements JsonSerializable{
-    // the pokemon id is set to the pkey from mysql
     public $pokemonId;
     public $pname;
     public $ptype;

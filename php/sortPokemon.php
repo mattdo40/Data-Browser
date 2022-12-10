@@ -2,12 +2,12 @@
     include "connectDB.php";
     include "pokemonClassCreation.php";
     
-    $sql = "SELECT COUNT(*) AS Total FROM pokemonTable;";
+    $sql = "SELECT COUNT(*) AS AmountPokemon FROM pokemonTable;";
     $result = $conn->query($sql);
-    $total = $result->fetch_assoc();
-    $total = $total["Total"];
+    $amount = $result->fetch_assoc();
+    $amount = $amount["AmountPokemon"];
     
-    if (isset($_POST['Title'])){
+    if (isset($_POST['Alphabetical'])){
         $sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemonTable ORDER BY pname ASC";
     
     }
@@ -31,7 +31,7 @@
             $pokemonArr[$i]=$newPokemon;
             $i+=1;
     }
-        $pokemonArr[$i]= $total;
+        $pokemonArr[$i]= $amount;
         $pokemon = json_encode($pokemonArr);
         echo $pokemon;
     } else {

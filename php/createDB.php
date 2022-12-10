@@ -82,5 +82,5 @@ $stmt->close();
 // close the connection
 $conn->close();
 
-
+header ("Location: ../Project 2.html");
 ?>

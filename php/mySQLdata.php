@@ -67,7 +67,7 @@ if (isset($_POST["array"])) {
 		echo json_encode($bad1);	
 	}
 
-	$conn->close();
+$conn->close();
 }
 
 ?>
