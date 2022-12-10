@@ -16,12 +16,9 @@ console.log(JSON.stringify(pokemon3));
 console.log(JSON.stringify(pokemon4));
 console.log(jsonString);
 */
-var curr_index = 0;
+var currindex = 0;
 var httpRequest;
 var dbobj;
-function loadDB() {
-  requestHandler("POST", "array=", "php/mySQLdata.php", getPokemon);
-}
 
 function searchIndex() {
   let input = document.getElementById("searchIndex").value - 1;
@@ -29,12 +26,12 @@ function searchIndex() {
     alert("Invalid Input");
     return;
   }
-  curr_index = input;
-  loadElements(dbobj[curr_index]);
+  currindex = input;
+  loadElements(dbobj[currindex]);
   displayPageNum();
 }
 
-function requestHandler(action, send_str, path, callback) {
+function request(action, send_str, path, callback) {
   httpRequest = new XMLHttpRequest();
   if (!httpRequest) {
     alert("Cannot create an XMLHTTP instance");
@@ -54,7 +51,7 @@ function getPokemon() {
       if (httpRequest.status === 200) {
         dbobj = JSON.parse(httpRequest.responseText);
         max = parseInt(dbobj.pop()) - 1;
-        loadElements(dbobj[curr_index]);
+        loadElements(dbobj[currindex]);
        displayPageNum();
       } else {
         alert("There was a problem with the request.");
@@ -80,50 +77,36 @@ function loadElements(dbobj){
 
 
 function prev(){
-  if (curr_index == 0) {
+  if (currindex == 0) {
     return;
   } else {
-    curr_index -= 1;
-    loadElements(dbobj[curr_index]);
+    currindex -= 1;
+    loadElements(dbobj[currindex]);
     displayPageNum();
   }
 }
 function next() {
-  if (curr_index == max) {
+  if (currindex == max) {
     return;
   } else {
-    curr_index += 1;
-    loadElements(dbobj[curr_index]);
+    currindex += 1;
+    loadElements(dbobj[currindex]);
     displayPageNum();
   }
 }
 
 function skipForward(){
-  curr_index = max;
-  loadElements(dbobj[curr_index]);
+  currindex = max;
+  loadElements(dbobj[currindex]);
   displayPageNum();
 }
 function skipBack(){
-  curr_index = 0;
-  loadElements(dbobj[curr_index]);
+  currindex = 0;
+  loadElements(dbobj[currindex]);
   displayPageNum();
 
 }  
 
-function requestHandler(action, send_str, path, callback) {
-  httpRequest = new XMLHttpRequest();
-  if (!httpRequest) {
-    alert("Cannot create an XMLHTTP instance");
-    return false;
-  }
-  httpRequest.onreadystatechange = callback;
-  httpRequest.open(action, path);
-  httpRequest.setRequestHeader(
-    "Content-Type",
-    "application/x-www-form-urlencoded"
-  );
-  httpRequest.send(send_str);
-}
 
 function toggleEdit() {
   let form = document.getElementById("pokemonform");
@@ -135,13 +118,17 @@ function toggleEdit() {
   }
 }
 
-function sortPokemon(sort_criteria) {
-  requestHandler("POST", sort_criteria, "php/sortPokemon.php", getPokemon);
+function sortPokemon(sortby) {
+  requestHandler("POST", sortby, "php/sortPokemon.php", getPokemon);
 }
 
 function displayPageNum() {
   document.getElementById("pagenum").innerHTML =
-    "Results " + (curr_index + 1) + "/" + (max + 1);
+    "Results " + (currindex + 1) + "/" + (max + 1);
+}
+
+function loadDB() {
+  request("POST", "array=", "php/mySQLdata.php", getPokemon);
 }
 loadDB();
 

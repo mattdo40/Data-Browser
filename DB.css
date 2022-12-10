@@ -1,3 +1,12 @@
+body {
+    font-family: fantasy;
+    background-image: url("imgs/background.png");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
 #scrollright {
     /* background-image:url(Rightbutton.png);*/
      background-size: cover;
@@ -38,9 +47,3 @@
      text-align: center;
      
  }
- body {
-    background-image: url("imgs/background.png");
-    background-color: #cccccc;
-    background-repeat: no-repeat;
-    background-size: cover;
-    }

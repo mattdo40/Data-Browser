@@ -14,7 +14,8 @@
         <img src="imgs/POKEMON.png">
 
     </header>
-    <button onClick="location.href='php/createDB.php'">Initialize Database</button> <br>
+    <!-- If you are running this for the first time then you must click the below button -->
+    <button onClick= "location.href='php/createDB.php'">Initialize Database</button> <br>
     <div id="loadImage-wrap">
         <p>Pokemon Image</p>
         <img src = "">
@@ -27,53 +28,52 @@
                         Edit <img src="imgs/edit.png" alt="edit icon" width="15px" />
                         </button>
                     </div>
-                    <h4 id = "pagenum"> </h4>
+                    <h3 id = "pagenum"> </h3>
                     <input id="get" type="button" value="Search" onclick="searchIndex()" />
-                    <input type="number" id="searchIndex" class="input_sm" value="" />
+                    <input type="number" id="searchIndex" value="1"/>
                     <form id = "pokemonform" method="POST" enctype="multipart/form-data">
                         
-                        <label for = "pname">Pokemon Name</label>
-                        <input type = "text" id = "pname" name ="pname" value="" class = "inputs" >
-                
                         <label for="pokemonId">Pokemon Id:</label>
                         <input type="number" name="pokemonId" id="pokemonId"><br >
-                               
+
+                        <label for = "pname">Pokemon Name</label>
+                        <input type = "text" id = "pname" name ="pname" value="" class = "inputs" > <br>
+                    
                         <label for = "ptype">Type</label>
-                        <input type = "text" id = "ptype" name = "ptype"  class = "inputs" >
-                                         
-                                
+                        <input type = "text" id = "ptype" name = "ptype"  class = "inputs" > <br>
+                                           
                         <label for = "num"> Pokedex Number</label>
                         <input id = "num" name = "num" type = "number" class = "inputs" >
-                                     
-                                
+                                           
                         <label for = "generation">Generation Number</label>
-                        <input id = "generation" name = "generation" type = "number" class = "inputs" >
+                        <input id = "generation" name = "generation" type = "number" class = "inputs" > <br>
                                     
                               
                         <label for = "legendary">Legendary?</label>
                         Yes<input type="radio" name="legendary" id="legendary" value="1">
                          No<input type="radio" name="legendary" id="notlegendary"value="0"> <br>
                         
-                        
-                        <label for = "imgLink">Select an image to upload</label> <br>
-                        <input type="file" name="imgLink" id="imgLink"> <br>
-
-                      
-                
+                    
+                        <br>
                         <input id= "add" type="submit" value="Add" formaction="php/addPokemon.php"> <br>
                         <input id= "update" type="submit" value="Update" formaction="php/updatePokemon.php"> <br>
                         <input id= "delete" type="submit" value="Delete"  formaction="php/deletePokemon.php"> <br>
+                        <br>
+                        <label for = "imgLink">Select an image to upload</label> <br>
+                        <input type="file" name="imgLink" id="imgLink"> <br> 
+                        <br>
                         <input id= "updateJSON" type="submit" value="updateJSON"  formaction="php/updateJSON.php">
                     </form>
-                
+                    <br>
                     <section>
-                    <input id="sortbyNameButton" type="button" value="Title" onclick="sortPokemon(this.value)">
+                        Sort By: <br>
+                    <input id="sortbyAlphabeticalButton" type="button" value="Alphabetical" onclick="sortPokemon(this.value)">
                     <input id="sortbyIndexButton" type="button" value="Index" onclick="sortPokemon(this.value)">
                     </section>
                      <div class = "buttonDiv">
                     
-                        <a class ="buttonA" onclick = "prev()"> Prev <img class = "buttons" src = "imgs/Leftbutton.png" id = "scrollleft" ></a>
-                        <a class ="buttonA" onclick = "next()"> Next <img class = "buttons" src = "imgs/Rightbutton.png" id = "scrollright"></a>
+                        <a class ="buttonA" onclick = "prev()"> Prev <img class = "buttons" src = "imgs/leftarrowbutton.png" id = "scrollleft" ></a>
+                        <a class ="buttonA" onclick = "next()"> Next <img class = "buttons" src = "imgs/rightarrowbutton.png" id = "scrollright"></a>
                   
                     </div>
 
