@@ -4,9 +4,8 @@
     $password = ""; // password that you created
     $dbname = "pokemonDB";
     
-    $conn =new mysqli($servername, $username, $password, $dbname);
-    // Check connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error ."<br>");
-    }
+    } 
 ?>

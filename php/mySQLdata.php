@@ -2,15 +2,15 @@
 include "pokemonClassCreation.php";
 include "connectDB.php";
 
+
 // get pokemon from db 
 if (isset($_POST["Index"])) {
 	$index =(int)$_POST["Index"];
 
 	// Selection of data 
-	$sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemonTable WHERE pkey=". $index;
+	$sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemontable WHERE pkey=". $index;
 	$result = $conn->query($sql);
 
-	//if row exists from query, get it and assign row's col-name 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 		$newPokemon=new Pokemon();
@@ -39,13 +39,11 @@ if (isset($_POST["array"])) {
 	$total = $total["Total"];
 	
 	// Selection of data 
-	$sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemonTable";
+	$sql = "SELECT pkey, pname, ptype, pokedexnum, legendary, generation, imgLink FROM pokemontable";
 	$result = $conn->query($sql);
 
-   
 	$i=0;
 	$pokemonArr= Array();
-	//if row exists from query, get it and assign row's col-name 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
             $newPokemon=new Pokemon();
