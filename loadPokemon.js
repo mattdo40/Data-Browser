@@ -119,7 +119,7 @@ function toggleEdit() {
 }
 
 function sortPokemon(sortby) {
-  requestHandler("POST", sortby, "php/sortPokemon.php", getPokemon);
+  request("POST", sortby, "php/sortPokemon.php", getPokemon);
 }
 
 function displayPageNum() {
