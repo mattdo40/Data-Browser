@@ -2,41 +2,41 @@
     {
         "pname": "Squirtle",
         "ptype": "Water",
-        "pokedexnum": 7,
-        "legendary" : true,
-        "generation": 1,
-        "imgLink": "imgs/squirtle.jpg"
+        "pokedexnum": "7",
+        "legendary": "1",
+        "generation": "1",
+        "imgLink": "imgs\/squirtle.jpg"
     },
     {
         "pname": "Cyndaquil",
         "ptype": "Fire",
-        "pokedexnum": 155,
-        "legendary" : false,
-        "generation": 2,
-        "imgLink": "imgs/cyndaquil.jpg"
+        "pokedexnum": "155",
+        "legendary": "0",
+        "generation": "2",
+        "imgLink": "imgs\/cyndaquil.jpg"
     },
     {
         "pname": "Poochyena",
         "ptype": "Dark",
-        "pokedexnum": 261,
-        "legendary" : true,
-        "generation": 3,
-        "imgLink": "imgs/poochyena.jpg"
+        "pokedexnum": "261",
+        "legendary": "1",
+        "generation": "3",
+        "imgLink": "imgs\/poochyena.jpg"
     },
     {
         "pname": "Lucario",
-        "ptype": "Fighting/Steel",
-        "pokedexnum": 448,
-        "legendary" : true,
-        "generation": 4,
-        "imgLink": "imgs/lucario.jpg"
+        "ptype": "Fighting\/Steel",
+        "pokedexnum": "448",
+        "legendary": "0",
+        "generation": "4",
+        "imgLink": "imgs\/lucario.jpg"
     },
     {
         "pname": "Drilbur",
         "ptype": "Ground",
-        "pokedexnum": 529,
-        "legendary" : false,
-        "generation": 5,
-        "imgLink": "imgs/drilbur.jpg"
+        "pokedexnum": "529",
+        "legendary": "0",
+        "generation": "5",
+        "imgLink": "imgs\/drilbur.jpg"
     }
 ]
