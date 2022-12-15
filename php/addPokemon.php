@@ -21,13 +21,13 @@
 // The below code is used for testing purposes. Removing the header line lets you see the echo messages.
  // check if there is no image chosen
   if($inputpath == NULL){
-    $setpath = NULL;
+    $setPath = NULL;
     echo "no image chosen";
   }
   // if img chosen, but already exists in the local folder or it was uploaded correctly
   else if(file_exists('../imgs/'.$inputpath) || $uploadOk == 1){
     echo '<br> img already in folder or it was uploaded correctly:'.'imgs/'.$inputpath.'<br>';
-    $setpath = 'imgs/'.$inputpath;
+    $setPath = 'imgs/'.$inputpath;
   }
   else{
     // img to folder upload failed
