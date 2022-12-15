@@ -2,7 +2,7 @@
     $servername = "localhost"; // default server name
     $username = "root"; // user name that you created
     $password = ""; // password that you created
-    $dbname = "pokemonDB";
+    $dbname = "pokemondb";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
