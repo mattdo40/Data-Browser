@@ -1,6 +1,5 @@
 <?php
 
-
 // function from class examples
 function generateRandomString($pokedexnum = 10) {
 	// list of characters that can be present in the string
